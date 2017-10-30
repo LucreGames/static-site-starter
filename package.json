@@ -8,7 +8,7 @@
     "dev": "node build/dev-server.js",
     "start": "npm run dev",
     "build": "node build/build.js",
-    "deploy": "bash git-gh-deploy.sh",
+    "deploy": "bash git-gh-deploy.sh"
   },
   "dependencies": {
     "jquery": "^3.2.1",

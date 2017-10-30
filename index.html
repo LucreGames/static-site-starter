@@ -6,7 +6,7 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','{{ GTM_CONTAINER }}');</script>
+    })(window,document,'script','dataLayer','<%= htmlWebpackPlugin.options.site.gtmContainer %>');</script>
     <!-- End Google Tag Manager -->
 
     <script type="application/ld+json">
@@ -14,12 +14,12 @@
       "@context": "http://schema.org",
       "@type": ["VideoGame","MobileApplication"],
       "gamePlatform": ["iOS","Android"],
-      "image": "{{ GAME IMAGE }}",
-      "name": "{{ GAME NAME }}",
-      "description": "{{ DESCRIPTION }}",
-      "url": "{{ GAME URL }}",
+      "image": "<%= htmlWebpackPlugin.options.site.social.image %>",
+      "name": "<%= htmlWebpackPlugin.options.site.game.name %>",
+      "description": "<%= htmlWebpackPlugin.options.site.page.description %>",
+      "url": "<%= htmlWebpackPlugin.options.site.page.url %>",
 
-      "genre": [{{ CATEGORIES }}],
+      "genre": <%= htmlWebpackPlugin.options.site.schema.genre %>,
 
       "author":{
         "@type":"Organization",
@@ -40,9 +40,9 @@
 
       "video": {
         "@type" : "http://schema.org/VideoObject",
-        "caption" : "{{ GAME NAME }} Trailer",
-        "description" : {{ GAME DESCRIPTION }}
-        "url" : {{ TRAILER URL }}
+        "caption" : "<%= htmlWebpackPlugin.options.site.game.name %> Trailer",
+        "description" : "<%= htmlWebpackPlugin.options.site.page.description %>"
+        "url" : <%= htmlWebpackPlugin.options.site.game.trailerUrl %>
       }
     }
     </script>
@@ -50,22 +50,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    <title>{{ GAME DESCRIPTION }}</title>
-    <meta name="description" content="Frontend web developer, game designer, and artist in Sacramento.">
-    <meta name="keywords" content="Web Developer, Sacramento, Frontend Developer, Engineer, Artist, Game Developer, HTML, CSS, Vue, Laravel, PHP, JavaScript">
-    <meta property="og:title" content="Eric Howard" />
-    <meta property="og:description" content="Frontend web developer, game designer, and artist in Sacramento." />
+
+    <title><%= htmlWebpackPlugin.options.site.page.title %></title>
+    <meta name="description" content="<%= htmlWebpackPlugin.options.site.page.description %>">
+    <meta name="keywords" content="<%= htmlWebpackPlugin.options.site.page.keywords %>">
+    <meta property="og:title" content="<%= htmlWebpackPlugin.options.site.page.title %>" />
+    <meta property="og:description" content="<%= htmlWebpackPlugin.options.site.page.description %>" />
     <meta property="og:url" content="http://eric-howard.com" />
     <meta property="og:site_name" content="Eric Howard" />
-    <meta property="og:image" content="http://eric-howard.com/static/img/eric-howard-social.png" />
+    <meta property="og:image" content="<%= htmlWebpackPlugin.options.site.social.image %>" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@theLucre" />
-    <meta name="twitter:creator" content="@theLucre" />
-    <meta property="twitter:url" content="http://bits.blogs.nytimes.com/2011/12/08/a-twitter-for-my-sister/" />
-    <meta property="twitter:title" content="Eric Howard" />
-    <meta property="twitter:description" content="Frontend web developer, game designer, and artist in Sacramento." />
-    <meta property="twitter:image" content="http://eric-howard.com/static/img/eric-howard-social.png" />
+    <meta name="twitter:site" content="@LucreGames" />
+    <meta name="twitter:creator" content="@LucreGames" />
+    <meta property="twitter:url" content="<%= htmlWebpackPlugin.options.site.page.url %>" />
+    <meta property="twitter:title" content="<%= htmlWebpackPlugin.options.site.page.title %>" />
+    <meta property="twitter:description" content="<%= htmlWebpackPlugin.options.site.page.description %>" />
+    <meta property="twitter:image" content="<%= htmlWebpackPlugin.options.site.social.image %>" />
 
     <!-- Add to home screen for Android and modern mobile browsers -->
     <link rel="manifest" href="/static/manifest.json">
@@ -74,7 +75,7 @@
     <!-- Add to home screen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="{{ GAME_NAME }}">
+    <meta name="apple-mobile-web-app-title" content="<%= htmlWebpackPlugin.options.site.game.name %>">
 
     <% for (var chunk of webpack.chunks) {
         for (var file of chunk.files) {
@@ -83,7 +84,7 @@
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ GTM_CONTAINER }}"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<%= htmlWebpackPlugin.options.site.gtmContainer %>"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
