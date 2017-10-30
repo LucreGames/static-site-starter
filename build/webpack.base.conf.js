@@ -2,6 +2,7 @@
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
+const site = require('../config/site')
 const vueLoaderConfig = require('./vue-loader.conf')
 var webpack = require('webpack')
 var PrerenderSpaPlugin = require('prerender-spa-plugin')
@@ -68,7 +69,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new FaviconsWebpackPlugin(path.resolve(__dirname, '../src/assets/favicon.png')),
+    new FaviconsWebpackPlugin(path.resolve(__dirname, site.favicon)),
     
     new webpack.LoaderOptionsPlugin({
       options: {

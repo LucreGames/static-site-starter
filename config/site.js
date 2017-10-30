@@ -1,5 +1,8 @@
 'use strict'
 module.exports = {
+  // Replace the image at this path with a 512x512 png
+  favicon: "../src/assets/favicon.png",
+
   page: {
     title: "New Game | Lucre Games",
     description: "Page description",
@@ -21,6 +24,6 @@ module.exports = {
     genre: '["Casual", "3D",]',
   },
 
-  gtmContainer: 'GAME_GTM_CONTAINER',
+  gtmContainer: 'GTM-TTQ2KP3',
 
 }
