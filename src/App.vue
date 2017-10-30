@@ -1,21 +1,11 @@
 <template lang="pug">
 #app
-  p Lucre Games starter site
-  social-links(:links="socialLinks")
-  lucre-logo 
+  router-view
 </template>
 
-<script>
-const site = require('@/../config/site')
-
+<script lang="coffee">
 export default {
-  name: 'app',
-
-  data() {
-    return {
-      socialLinks: site.social.links,
-    }
-  }
+  name: 'app'
 }
 </script>
 

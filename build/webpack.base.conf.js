@@ -24,7 +24,7 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', '.coffee'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
@@ -41,6 +41,10 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
+      },
+      {
+        test: /\.coffee$/,
+        loader: 'coffee-loader',
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -78,12 +82,6 @@ module.exports = {
           import: [path.resolve(__dirname, '../src/stylus/definitions.styl')]
         }
       }
-    }),
-    new PrerenderSpaPlugin(
-      // Absolute path to compiled SPA
-      path.join(resolve('dist')),
-      // Routes to prerender
-      [ '/',]
-    )
+    })
   ],
 }
