@@ -14,6 +14,10 @@ const PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 const env = config.build.env
 
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
+
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
