@@ -1,13 +1,21 @@
 <template lang="pug">
 #app
   p Lucre Games starter site
-  a.icon-facebook(href="#" data-gtm='Social Links > Click' data-gtm-value="Facebook")
+  social-links(:links="socialLinks")
+  lucre-logo 
 </template>
 
 <script>
+const site = require('@/../config/site')
 
 export default {
   name: 'app',
+
+  data() {
+    return {
+      socialLinks: site.social.links,
+    }
+  }
 }
 </script>
 
@@ -18,6 +26,9 @@ export default {
   -moz-osx-font-smoothing grayscale
   text-align center
   color #2c3e50
-  margin-top 60px
+  padding-top 60px
+  min-height 100%
+
+  background-image linear-gradient(0deg, #FA5B75, #5A3662)
 
 </style>

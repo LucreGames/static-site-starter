@@ -18,6 +18,10 @@ module.exports = {
 
   social: {
     image: "http://geotapgame.com/static/img/geotap-game-lucre-games-casual-relaxing-mobile-game.png",
+    links: [
+      { icon: 'facebook', url: 'https://www.facebook.com/LucreGames/' },
+      { icon: 'twitter', url: 'https://twitter.com/LucreGames/' },
+    ]
   },
   
   schema: {

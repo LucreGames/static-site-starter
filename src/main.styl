@@ -3,3 +3,34 @@
 
 @import './stylus/mixins.styl'
 @import './stylus/typography.styl'
+
+// Set font-sizes so rem values for responsive effects.  Combined with the
+// font() call on `body`, this scales from 20px down to 14px
+:root
+  mq-values(font-size, 100%, 80%, 1200px)
+
+*, *:before, *:after
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+html, body
+  height 100%
+
+[v-cloak]
+  display none
+
+p, h1, h2, h3, h4, h5, h6  
+  color white 
+
+a 
+  text-decoration none
+  color white 
+  transition color .25s ease 
+
+  &:hover,
+  &:active
+    color darken(white, 25%)
+
+
+img
+  max-width 100%

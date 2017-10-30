@@ -14,7 +14,10 @@
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "normalize.css": "^7.0.0",
-    "vue": "^2.5.2"
+    "vue": "^2.5.2",
+    "vue-in-viewport-directive": "^1.1.4",
+    "vue-in-viewport-mixin": "^1.0.3",
+    "vue-visual": "^0.3.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
